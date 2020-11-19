@@ -161,6 +161,14 @@ body {
 
 }
 
+/* UC4 field validation */
+error-output {
+    margin-left: 10px;
+    font-size: 12px;
+    font-style: italic;
+    color: tomato;
+}
+
 .buttonParent {
     display: flex;
     flex-wrap: nowrap;

@@ -37,17 +37,20 @@
             <div class="row-content">
                 <label class="label text" for="name">Full Name</label>
                 <input class="input" type="text" id="name" name="name" required>
+                <error-output class="name-error" for="name"></error-output>
             </div>
             <!--Phone No-->
             <div class="row-content">
                 <label class="label text" for="phone">Phone number</label>
                 <input class="input" type="text" id="phone" name="phone" required>
+                <error-output class="phone-error" for="phone"></error-output>
             </div>
             <!--Address-->
             <div class="row-content">
                 <label class="label text" for="address">Address</label>
                 <textarea class="input" id="address" name="Address" placeholder=""
                     style="height: 100px; resize: unset;"></textarea>
+                <error-output class="address-error" for="address"></error-output>
             </div>
             <!--city-state-zip-->
             <div class="column-content">
@@ -76,8 +79,9 @@
                 <button type="reset" class="button" onclick="resetForm();return false;">Reset</button>
             </div>
         </form>
-
     </div>
+    <script src="../scripts/Contact.js"></script>
+    <script src="../scripts/address-form.js"></script>
 </body>
 
 </html>
