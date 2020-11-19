@@ -102,18 +102,18 @@ class Contact {
 
 }
 
-let contact = new Contact("Debojyoti", "Mukherjee", "privy", "Murshidabad", "Maharastra", "788687", "1234567890", "ghg.ghd@bridgelabz.com");
-console.log(contact.toString());
+// let contact = new Contact("Debojyoti", "Mukherjee", "privy", "Murshidabad", "Maharastra", "788687", "1234567890", "ghg.ghd@bridgelabz.com");
+// console.log(contact.toString());
 
-let AddressBookArr = [];
-//add contact
-AddressBookArr.push(contact);
-//print address book by name
-let AddressBookStr = AddressBookArr
-    .filter(contact => contact.firstName == "Debojyoti")
-    .map(contact => contact.toString());
-console.log(AddressBookStr);
-//remove contact from address book
-AddressBookArr = AddressBookArr
-    .filter(contact => contact.firstName != "Debojyoti");
-console.log(AddressBookArr);
+// let AddressBookArr = [];
+// //add contact
+// AddressBookArr.push(contact);
+// //print address book by name
+// let AddressBookStr = AddressBookArr
+//     .filter(contact => contact.firstName == "Debojyoti")
+//     .map(contact => contact.toString());
+// console.log(AddressBookStr);
+// //remove contact from address book
+// AddressBookArr = AddressBookArr
+//     .filter(contact => contact.firstName != "Debojyoti");
+// console.log(AddressBookArr);
