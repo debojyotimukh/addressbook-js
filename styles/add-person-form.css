@@ -70,12 +70,15 @@ body {
     border: 1px solid #F5F5F5;
     border-radius: 8px;
     margin-top: 30px;
+    margin-bottom: 30px;
     opacity: 1;
 }
 
 .form-head {
     background: #008CFF 0% 0% no-repeat padding-box;
     border-radius: 8px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
     padding-top: 20px;
     padding-bottom: 20px;
     display: flex;
@@ -101,10 +104,85 @@ body {
     width: 24px;
 }
 
+/* UC3 Form fields */
 .row-content {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    margin-top: 30px;
     margin-bottom: 10px;
-    align-items: center;
-    border: 0px solid green;
+    margin-left: 40px;
+    align-items: flex-start;
+}
+
+.column-content {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    flex-wrap: nowrap;
+    flex-grow: unset;
+    flex-shrink: unset;
+    align-items: flex-start;
+}
+
+.label {
+    padding: 12px 12px 6px 0px;
+    display: inline-block;
+}
+
+.text {
+    text-align: left;
+    font: normal normal normal 18px/24px Roboto;
+    letter-spacing: 0px;
+    color: #42515F;
+    text-transform: capitalize;
+    opacity: 1;
+}
+
+.input {
+    width: 95%;
+    height: 35px;
+    margin-right: 20%;
+    padding: 12px 12px 12px 12px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #BDBDBD;
+    border-radius: 3px;
+    opacity: 1;
+
+}
+
+.input-drop {
+    width: 237px;
+    height: 35px;
+    margin-right: 20%;
+    padding: 1px 12px 1px 12px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #BDBDBD;
+    border-radius: 3px;
+    opacity: 1;
+
+}
+
+.buttonParent {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-grow: inherit;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    margin-right: 40px;
+    justify-content: flex-end;
+}
+
+.button {
+    background: #E2E2E2 0% 0% no-repeat padding-box;
+    border: 1px solid #969696;
+    border-radius: 5px;
+    margin-left: 40px;
+    width: 160px;
+    height: 45px;
+    text-align: center;
+    font: normal normal normal 20px/26px Roboto;
+    letter-spacing: 0px;
+    color: #42515F;
+    opacity: 1;
+    opacity: 1;
 }
