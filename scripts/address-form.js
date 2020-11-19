@@ -48,6 +48,57 @@ window.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+const save = () => {
+    try {
+        let contact = createNewContact();
+        createAndUpdateStorage(contact);
+
+    } catch (error) {
+        alert(error);
+        return;
+    }
+};
+
+const createNewContact = (id) => {
+    let contact = new Contact();
+    if (!id) contact.id = generateID();
+    else contact.id = id;
+    
+    try {
+        contact.fullName = getInputValueById('#name');
+        contact.phone = getInputValueById('#phone');
+        contact.address = getInputValueById('#address');
+        contact.city = getInputValueById('#city');
+        contact.state = getInputValueById('#state');
+        contact.zip = getInputValueById('#zip');
+
+    } catch (error) {
+        throw 'Failed to create contact: ' + error;
+    }
+    return contact;
+
+};
+
+const generateID = () => {
+    let id = localStorage.getItem("RECENT_CONTACT_ID");
+    id = !id ? 1 : (parseInt(id) + 1).toString();
+    localStorage.setItem("RECENT_CONTACT_ID", id);
+
+    return id;
+};
+
+function createAndUpdateStorage(contact) {
+    let contactList = JSON.parse(localStorage.getItem("ContactList"));
+
+    if (contactList != undefined) {
+        contactList.push(contact);
+    } else {
+        contactList = [contact];
+    }
+    alert(contactList.toString());
+    localStorage.setItem("ContactList", JSON.stringify(contactList));
+}
+
 const getInputValueById = (id) => {
     let value = document.querySelector(id).value;
     return value;

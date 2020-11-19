@@ -1,6 +1,15 @@
 class Contact {
 
     //getter and setters
+    get id() {
+        return this._id;
+    }
+    set id(id) {
+        if (id > 0)
+            this._id = id;
+        else throw 'ID has to be positive';
+    }
+
     get fullName() {
         return this._fullName;
     }
@@ -10,26 +19,6 @@ class Contact {
         if (nameRegex.test(value))
             this._fullName = value;
         else throw 'Invalid Name';
-    }
-
-    get firstName() {
-        return this._firstName;
-    }
-    set firstName(value) {
-        let nameRegex = RegExp('^[A-Z]{1}[a-z]{3,}$');
-        if (nameRegex.test(value))
-            this._firstName = value;
-        else throw 'Name is invalid';
-    }
-
-    get lastName() {
-        return this._lastName;
-    }
-    set lastName(value) {
-        let nameRegex = RegExp('^[A-Z]{1}[a-z]{3,}$');
-        if (nameRegex.test(value))
-            this._lastName = value;
-        else throw 'Name is invalid';
     }
 
     get address() {
@@ -56,7 +45,7 @@ class Contact {
         return this._state;
     }
     set state(value) {
-        let stateRegex = RegExp('^[A-Za-z]{3,}$');
+        let stateRegex = RegExp('^[A-Za-z\\s]{3,}$');
         if (stateRegex.test(value))
             this._state = value;
         else throw 'State is invalid';
