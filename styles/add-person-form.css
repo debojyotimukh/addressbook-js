@@ -79,12 +79,14 @@ body {
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
     display: flex;
     flex-direction: row;
+    width: auto;
     flex-wrap: nowrap;
-    align-items: center;
-    opacity: 1;
+    flex-grow: unset;
+    flex-shrink: unset;
+    align-items: flex-start;
 }
 
 .form-header-text {
@@ -97,10 +99,21 @@ body {
 
 .cancelButton {
     align-items: flex-end;
+    /* box-sizing: border-box; */
     margin-left: 240px;
-    padding-top: 25px;
-    padding-bottom: 10px;
-    width: 24px;
+    /* width: 70px; */
+}
+
+.cancelButton .cancel-hover {
+    display: none;
+}
+
+.cancelButton:hover .cancel-hover {
+    display: inline;
+}
+
+.cancelButton:hover .cancel {
+    display: none;
 }
 
 /* UC3 Form fields */
@@ -198,4 +211,75 @@ error-output {
 .button:hover {
     background-color: #008CFF;
     color: #F7F7F7;
+    transition: ease-out;
+
+}
+
+
+/* Responsive to screen size*/
+@media only screen and (max-width: 700px) {
+
+    .logo-content-img {
+        width: 12%;
+    }
+
+    .cancelButton {
+        margin-left: 35px;
+        align-content: flex-start;
+    }
+
+    .form-header-text {
+        font: normal normal normal 18px/24px Roboto;
+        margin-left: 10%;
+    }
+
+    .form {
+        width: 85%;
+    }
+
+    .input {
+        width: auto;
+    }
+
+    .column-content {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        flex-wrap: nowrap;
+        flex-grow: unset;
+        flex-shrink: unset;
+        align-items: flex-start;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .form {
+        width: 95%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .input {
+        width: fit-content;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .form {
+        width: 95%;
+        /* margin-top: 10px; */
+        /* margin-bottom: 10px; */
+    }
+
+    .cancelButton {
+        margin-left: 25px;
+    }
+
+    .input {
+        width: 80%;
+    }
+
+    .input-drop {
+        width: 90%;
+    }
 }

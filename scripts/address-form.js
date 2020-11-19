@@ -63,7 +63,7 @@ const createNewContact = (id) => {
     let contact = new Contact();
     if (!id) contact.id = generateID();
     else contact.id = id;
-    
+
     try {
         contact.fullName = getInputValueById('#name');
         contact.phone = getInputValueById('#phone');
@@ -102,4 +102,27 @@ function createAndUpdateStorage(contact) {
 const getInputValueById = (id) => {
     let value = document.querySelector(id).value;
     return value;
+};
+
+const resetForm = () => {
+    setValue('#name', '');
+    setValue('#phone', '');
+    setValue('#address', '');
+    setValue('#city', '');
+    setValue('#state', '');
+    setValue('#zip', '');
+
+    setTextValue('.name-error', '');
+    setTextValue('.phone-error', '');
+    setTextValue('.address-error', '');
+};
+
+const setValue = (id, value) => {
+    const element = document.querySelector(id);
+    element.value = value;
+};
+
+const setTextValue = (id, value) => {
+    const element = document.querySelector(id);
+    element.textContent = value;
 };
