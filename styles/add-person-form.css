@@ -169,6 +169,7 @@ error-output {
     color: tomato;
 }
 
+/* UC5 submit reset button */
 .buttonParent {
     display: flex;
     flex-wrap: nowrap;
@@ -190,6 +191,11 @@ error-output {
     font: normal normal normal 20px/26px Roboto;
     letter-spacing: 0px;
     color: #42515F;
+    transition-duration: 0.3s;
     opacity: 1;
-    opacity: 1;
+}
+
+.button:hover {
+    background-color: #008CFF;
+    color: #F7F7F7;
 }
