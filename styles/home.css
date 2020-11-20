@@ -53,7 +53,7 @@
 }
 
 th {
-    text-align: center;
+    text-align: left;
     font: normal normal bold 18px/22px Lato;
     letter-spacing: 0px;
     color: #658292;
@@ -79,7 +79,7 @@ tr:not(:first-child):hover {
 }
 
 tr:not(:first-child) {
-    text-align: center;
+    text-align: left;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     padding: 12px 12px 12px 0px;
     letter-spacing: 0px;
