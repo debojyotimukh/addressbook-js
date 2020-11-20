@@ -24,8 +24,8 @@ const createInnerHtml = () => {
                 <td>${contact._zip}</td>
                 <td>${contact._phone}</td>
                 <td>
-                    <img id="${contact._id}" onclick="remove(this)" alt="delete" src="../assets/icons/delete-black-18dp.svg">
-                    <img id="${contact._id}" alt="edit" onclick="update(this)" src="../assets/icons/create-black-18dp.svg">
+                    <img id="${contact._id}" class="modify" onclick="remove(this)" alt="delete" src="../assets/icons/delete-black-18dp.svg">
+                    <img id="${contact._id}" class="modify" alt="edit" onclick="update(this)" src="../assets/icons/create-black-18dp.svg">
                 </td>
             </tr>`;
     }
@@ -37,4 +37,18 @@ const createInnerHtml = () => {
 const getContactListFromStorage = () => {
     let contactList = localStorage.getItem('ContactList');
     return contactList ? JSON.parse(contactList) : [];
+};
+
+// remove contact from address book
+const remove = (node) => {
+    let contactList = getContactListFromStorage();
+    let contact = contactList.find(data => data._id == node.id);
+    if (!contact) return;
+    alert("Deleting contact!");
+    const index = contactList.map(data => data._id)
+        .indexOf(contact._id);
+    contactList.splice(index, 1);
+    localStorage.setItem('ContactList', JSON.stringify(contactList));
+
+    createInnerHtml();
 };

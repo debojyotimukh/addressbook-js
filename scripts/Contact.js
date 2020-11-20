@@ -25,7 +25,7 @@ class Contact {
         return this._address;
     }
     set address(value) {
-        let addressRegex = RegExp('^[\\w]{3,}.+$');
+        let addressRegex = RegExp('^[0-9\\s]+[\\w]{3,}.+$');
         if (addressRegex.test(value))
             this._address = value;
         else throw 'Address is invalid';

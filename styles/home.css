@@ -58,6 +58,7 @@ th {
     letter-spacing: 0px;
     color: #658292;
     text-transform: capitalize;
+    padding-left: 12px;
     opacity: 1;
 }
 
@@ -70,7 +71,6 @@ tr {
 tr:first-child {
     background: none;
     align-content: center;
-    /* margin-left: 5%; */
 }
 
 tr:not(:first-child):hover {
@@ -93,7 +93,15 @@ td {
     color: #3d3d3d;
 }
 
+td:first-child {
+    padding-left: 12px;
+}
+
 td:not(:first-child) {
     padding-top: 12px;
     padding-bottom: 12px;
+}
+
+.modify:hover {
+    cursor: pointer;
 }
