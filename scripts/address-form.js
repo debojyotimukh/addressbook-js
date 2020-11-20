@@ -57,6 +57,7 @@ const save = () => {
         alert(error);
         return;
     }
+    window.location.href = "../pages/home.html";
 };
 
 const createNewContact = (id) => {
