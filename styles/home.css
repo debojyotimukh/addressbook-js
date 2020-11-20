@@ -1,3 +1,4 @@
+/* Home page header */
 .top-content {
     display: flex;
     flex-direction: row;
@@ -36,6 +37,10 @@
     outline: none;
     cursor: pointer;
     text-decoration: none;
+}
+
+.add-button:hover {
+    background-color: #006eff;
 }
 
 /* Contact table */
