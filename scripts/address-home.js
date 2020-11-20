@@ -1,4 +1,7 @@
+let isUpdate = false;
+
 window.addEventListener('DOMContentLoaded', () => {
+    localStorage.removeItem("editContact");
     createInnerHtml();
 });
 
@@ -51,4 +54,18 @@ const remove = (node) => {
     localStorage.setItem('ContactList', JSON.stringify(contactList));
 
     createInnerHtml();
+};
+
+// Update contact in address book
+const update = (node) => {
+    isUpdate = true;
+
+    let contactList = getContactListFromStorage();
+    let contactData = contactList.find(data => data._id == node.id);
+    alert(contactData.toString());
+    if (!contactData) return;
+    localStorage.setItem('editContact', JSON.stringify(contactData));
+    window.location.href = "../pages/add-contact-form.html";
+
+    isUpdate = false;
 };

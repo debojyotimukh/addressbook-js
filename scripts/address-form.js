@@ -46,18 +46,41 @@ window.addEventListener('DOMContentLoaded', function () {
             addressError.textContent = e;
         }
     });
+
+    checkForUpdate();
 });
 
+// Add contact
 const save = () => {
-    try {
-        let contact = createNewContact();
-        createAndUpdateStorage(contact);
+    if (isUpdate) {
+        updateStorage();
+    } else {
+        try {
+            let contact = createNewContact();
+            createAndUpdateStorage(contact);
 
-    } catch (error) {
-        alert(error);
-        return;
+        } catch (error) {
+            alert(error);
+            return;
+        }
     }
     window.location.href = "../pages/home.html";
+};
+
+const updateStorage = () => {
+    alert("update");
+    isUpdate = false;
+    const contactJson = localStorage.getItem("editContact");
+    let contactObj = JSON.parse(contactJson);
+    const id = contactObj._id;
+    let contactData = createNewContact(id);
+    let contactList = JSON.parse(localStorage.getItem('ContactList'));
+    const index = contactList.map(data => data._id).indexOf(contactData._id);
+    contactList.splice(index, 1, contactData);
+
+    localStorage.setItem('ContactList', JSON.stringify(contactList));
+
+    return;
 };
 
 const createNewContact = (id) => {
@@ -126,4 +149,19 @@ const setValue = (id, value) => {
 const setTextValue = (id, value) => {
     const element = document.querySelector(id);
     element.textContent = value;
+};
+
+const checkForUpdate = () => {
+    const contactJson = localStorage.getItem("editContact");
+    isUpdate = contactJson ? true : false;
+    if (!isUpdate) return;
+    let contactObj = JSON.parse(contactJson);
+
+    setValue('#name', contactObj._fullName);
+    setValue('#phone', contactObj._phone);
+    setValue('#address', contactObj._address);
+    setValue('#city', contactObj._city);
+    setValue('#state', contactObj._state);
+    setValue('#zip', contactObj._zip);
+
 };
