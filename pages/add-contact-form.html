@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
     <title>Add Person</title>
     <link rel="stylesheet" href="../styles/add-person-form.css">
+    <script src="../scripts/cities.js"></script>
 </head>
 
 <body>
@@ -55,19 +56,20 @@
             </div>
             <!--city-state-zip-->
             <div class="column-content">
-                <div class="row-content">
-                    <label class="label text" for="city">City</label>
-                    <select class="input-drop text" id="city" placeholder="Select City">
-                        <option class="input-drop" value="" disabled selected>Select City</option>
-                        <option class="input-drop" value="Howrah">Howrah</option>
-                    </select>
-                </div>
+                <!--State-->
                 <div class="row-content">
                     <label class="label text" for="state">State</label>
-                    <select class="input-drop text" id="state">
-                        <option class="input-drop" value="" disabled selected>Select State</option>
-                        <option class="input" value="West Bengal">West Bengal</option>
+                    <select onchange="print_city('city',this.selectedIndex)" class="input-drop text" id="state"
+                        required>
                     </select>
+                </div>
+                <!--City-->
+                <div class="row-content">
+                    <label class="label text" for="city">City</label>
+                    <select class="input-drop text" id="city" required>
+                        <option class="input-drop" value="" disabled selected>Select City</option>
+                    </select>
+                    <script lang="javascript">print_state("state");</script>
                 </div>
                 <div class="row-content">
                     <label class="label text" for="zip">Zip</label>
